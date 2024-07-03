@@ -4,9 +4,6 @@ FROM golang:1.20
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-# Download all dependencies. Dependencies will be cached if the go.mod file is not changed
-RUN go mod download
-
 # Copy the source from the current directory to the Working Directory inside the container
 COPY . .
 
