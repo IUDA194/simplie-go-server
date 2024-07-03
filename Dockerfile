@@ -4,10 +4,10 @@ FROM golang:1.20
 # Set the Current Working Directory inside the container
 WORKDIR /app
 
-# Copy go mod and go sum files
-COPY go.mod go.sum ./
+# Copy go mod file
+COPY go.mod ./
 
-# Download all dependencies. Dependencies will be cached if the go.mod and go.sum files are not changed
+# Download all dependencies. Dependencies will be cached if the go.mod file is not changed
 RUN go mod download
 
 # Copy the source from the current directory to the Working Directory inside the container
@@ -21,3 +21,4 @@ EXPOSE 8080
 
 # Command to run the executable
 CMD ["./main"]
+
